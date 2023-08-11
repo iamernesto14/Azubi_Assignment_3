@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Information Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+      form {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="tel"],
+      input[type="date"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      .play {
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+      }
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="submit_form.php" method="POST">
+      <!-- Task 1 -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required /><br />
+
+      <!-- Task 2 -->
+      <label for="phone">Phone Number:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        pattern="[0-9]{10}"
+        required /><br />
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required /><br />
+
+      <label for="country">Country of Residence:</label>
+      <select id="country" name="country" required>
+        <option value="usa">United States</option>
+        <option value="canada">Canada</option>
+        <!-- Add more countries here --></select
+      ><br />
+
+      <!-- Task 3 -->
+      <label>Gender:</label><br />
+      <div class="play">
+        <input type="radio" id="male" name="gender" value="male" required />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other" />
+        <label for="other">Other</label><br />
+      </div>
+
+      <label>Hobbies:</label><br />
+      <div class="play">
+        <input type="checkbox" id="reading" name="hobbies[]" value="reading" />
+        <label for="reading">Reading</label>
+        <input type="checkbox" id="sports" name="hobbies[]" value="sports" />
+        <label for="sports">Sports</label>
+        <input type="checkbox" id="music" name="hobbies[]" value="music" />
+        <label for="music">Music</label>
+        <input type="checkbox" id="travel" name="hobbies[]" value="travel" />
+        <label for="travel">Travel</label><br />
+      </div>
+
+      <!-- Task 4 -->
+      <label for="comments">Comments:</label><br />
+      <textarea id="comments" name="comments" rows="4" cols="50"></textarea
+      ><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
